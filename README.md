@@ -32,26 +32,26 @@ This project simulates real-world Active Directory (AD) attacks using Kali Linux
 1. **Password Spray** – Using `hydra` against RDP
 
 
-Scripts used are in [`attack-scripts/`](attack-scripts/)
 
 ![Kali Attack Demo](images/kali_attack_demo.gif)
 
 ---
 
-## 📊 Splunk Detection & Alerts
+## Splunk Detection & Alerts
 
 Logs are ingested from WinDC via Universal Forwarder. Splunk content includes:
 
-- Search queries ![Screenshot (31)](https://github.com/user-attachments/assets/fa9bd99b-4bc0-4cb8-9051-2ec9d0343c1f)
+- Search queries ![SPl queries](https://github.com/user-attachments/assets/fa9bd99b-4bc0-4cb8-9051-2ec9d0343c1f)
 
-- Custom dashboards (JSON)
+- Custom dashboards ![Dashboard](https://github.com/user-attachments/assets/e1bd2101-7ba7-41a1-a2f0-14cbb5e8d594)
+
 - Example alerts and correlations
 
 ![Splunk Alert](images/splunk_alert.png)
 
 ---
 
-## 🚀 Quick Start (Simulation)
+## (Simulation)
 
 ### 🛠️ 1. Set Up AD and Splunk
 Follow setup in [docs/setup_guide.md](docs/setup_guide.md)
@@ -59,7 +59,5 @@ Follow setup in [docs/setup_guide.md](docs/setup_guide.md)
 ### 🧑‍💻 2. Run Attacks from Kali
 ```bash
 # Example: LDAP enumeration
-python3 attack-scripts/ldap_enum.py 192.168.1.10
+hydra -l jsmith -Password.txt rdp://20.0.107.139 -W3
 
-# Pass-the-hash
-pth-winexe -U 'Administrator%HASH' //192.168.1.10 cmd
