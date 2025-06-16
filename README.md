@@ -42,7 +42,8 @@ Scripts used are in [`attack-scripts/`](attack-scripts/)
 
 Logs are ingested from WinDC via Universal Forwarder. Splunk content includes:
 
-- Search queries (in [`splunk-queries/detection-searches.spl`](splunk-queries/detection-searches.spl))
+- Search queries ![Screenshot (31)](https://github.com/user-attachments/assets/fa9bd99b-4bc0-4cb8-9051-2ec9d0343c1f)
+
 - Custom dashboards (JSON)
 - Example alerts and correlations
 
